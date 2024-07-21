@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: large-backend-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: large-backend-app
+  template:
+    metadata:
+      labels:
+        app: large-backend-app
+    spec:
+      containers:
+      - name: large-backend-app
+        image: deveshrathore13/large-backend:latest
+        ports:
+        - containerPort: 3000
